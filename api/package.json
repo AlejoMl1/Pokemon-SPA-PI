@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -L",
+    "start": "nodemon",
     "test": "mocha -w ./tests/**/*.spec.js"
   },
-  "author": "Henry",
+  "author": "Alejandro Muñoz",
   "license": "ISC",
   "engines": {
     "node": ">=12.18.3",
