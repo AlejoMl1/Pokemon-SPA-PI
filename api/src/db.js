@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const { DB_USER, DB_PASSWORD, DB_HOST,DB_NAME} = process.env;
 
+
 //*Initialize the db with sequelize
 const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`, {
   logging: false, // set to console.log to see the raw SQL queries
@@ -37,6 +38,8 @@ const { Pokemon,Types } = sequelize.models;
 Pokemon.belongsToMany(Types, {through: 'pokemonTypes'})
 Types.belongsToMany(Pokemon, {through: 'pokemonTypes'})
 
+// console.log(insertTypesToDB)
+// insertTypesToDB()
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
